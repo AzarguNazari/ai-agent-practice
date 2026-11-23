@@ -6,14 +6,15 @@ Two minimal chat examples that call the DeepSeek API with different SDKs.
 
 ```bash
 uv sync
+source .venv/bin/activate
 export DEEPSEEK_API_KEY="sk-..."
 ```
 
 ## Run
 
 ```bash
-python src/openai_chat.py
-python src/anthropic_chat.py
+python3 src/openai_chat.py
+python3 src/anthropic_chat.py
 ```
 
 - `src/openai_chat.py` uses the OpenAI SDK at `https://api.deepseek.com`.
