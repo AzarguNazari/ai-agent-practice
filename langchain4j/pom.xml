@@ -15,6 +15,8 @@
         <langchain4j.version>1.24.0</langchain4j.version>
         <deepseek.base-url>https://api.deepseek.com</deepseek.base-url>
         <deepseek.model>deepseek-chat</deepseek.model>
+        <exec.mainClass>com.example.DeepSeekExample</exec.mainClass>
+        <logging.format>%1$tH:%1$tM:%1$tS [%4$s] %5$s%n</logging.format>
     </properties>
 
     <dependencies>
@@ -45,7 +47,13 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.6.4</version>
                 <configuration>
-                    <mainClass>com.example.DeepSeekExample</mainClass>
+                    <mainClass>${exec.mainClass}</mainClass>
+                    <systemProperties>
+                        <systemProperty>
+                            <key>java.util.logging.SimpleFormatter.format</key>
+                            <value>${logging.format}</value>
+                        </systemProperty>
+                    </systemProperties>
                 </configuration>
             </plugin>
         </plugins>

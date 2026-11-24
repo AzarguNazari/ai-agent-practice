@@ -15,3 +15,17 @@ cd langchain
 ```
 
 `run.sh` creates a local `.venv` with `uv` if needed, installs `requirements.txt`, and runs the example.
+
+## Tool calling
+
+`tools/tool_calling_agent.py` is a small agent with three tools: `add`,
+`get_temperature`, and `get_weather`. Each tool logs its arguments and result, so
+you can see exactly which tool the model calls.
+
+```bash
+cd langchain
+.venv/bin/python tools/tool_calling_agent.py
+```
+
+For a first exercise, ask one thing at a time (for example, "add 7 and 5"), then
+change the question in the script to ask for all three results in one turn.

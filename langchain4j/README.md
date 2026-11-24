@@ -14,6 +14,20 @@ There is no separate Anthropic path.
 ## Run
 
 ```bash
-cd java
+cd langchain4j
 mvn compile exec:java
 ```
+
+## Tool calling
+
+`src/main/java/com/example/tools/` contains the same teaching exercise as the
+Python example: three tools (`add`, `getTemperature`, `getWeather`) that each log
+their arguments and result when the model calls them.
+
+```bash
+cd langchain4j
+mvn -Dexec.mainClass=com.example.tools.ToolCallingAgentExample compile exec:java
+```
+
+The log format comes from the `logging.format` property in `pom.xml`; the exec
+plugin passes it to the JVM, so no logging setup is needed in the Java code.
