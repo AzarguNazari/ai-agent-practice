@@ -24,7 +24,7 @@ public class ToolCallingAgentExample {
 
         TeachingAssistant assistant = AiServices.builder(TeachingAssistant.class)
                 .chatModel(model)
-                .tools(new TeachingTools())
+                .tools(new Tools())
                 .build();
 
         String question = "Using your tools: add 7 and 5, tell me the temperature in Tehran, "

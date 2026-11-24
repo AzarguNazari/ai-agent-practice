@@ -5,9 +5,9 @@ import dev.langchain4j.agent.tool.Tool;
 
 import java.util.logging.Logger;
 
-public class TeachingTools {
+public class Tools {
 
-    private static final Logger LOG = Logger.getLogger(TeachingTools.class.getName());
+    private static final Logger LOG = Logger.getLogger(Tools.class.getName());
 
     @Tool("Add two numbers and return their sum.")
     public int add(@P(name = "a", description = "The first number to add") int a,
