@@ -1,10 +1,3 @@
-"""Minimal LangChain tool-calling demo with three teaching tools.
-
-Run from the ``langchain`` directory:
-
-    .venv/bin/python tools/tool_calling_agent.py
-"""
-
 import logging
 import os
 
@@ -19,27 +12,24 @@ logging.basicConfig(
 log = logging.getLogger("teaching.tools")
 
 
-@tool
+@tool(description="Add two numbers and return their sum.")
 def add(a: int, b: int) -> int:
-    """Add two numbers and return their sum."""
     log.info("add called: a=%s, b=%s", a, b)
     result = a + b
     log.info("add returned: %s", result)
     return result
 
 
-@tool
+@tool(description="Return a fixed demo temperature for a given city.")
 def get_temperature(city: str) -> str:
-    """Return a fixed demo temperature for a given city."""
     log.info("get_temperature called: city=%s", city)
     result = f"It is always 25 C in {city}."
     log.info("get_temperature returned: %s", result)
     return result
 
 
-@tool
+@tool(description="Get weather for a given city.")
 def get_weather(city: str) -> str:
-    """Get weather for a given city."""
     log.info("get_weather called: city=%s", city)
     result = f"It's always sunny in {city}!"
     log.info("get_weather returned: %s", result)
