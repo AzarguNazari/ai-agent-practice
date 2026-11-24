@@ -38,7 +38,7 @@ def get_weather(city: str) -> str:
 
 if __name__ == "__main__":
     model = init_chat_model(
-        "deepseek-chat",
+        "deepseek-flash",
         model_provider="openai",
         base_url="https://api.deepseek.com",
         api_key=os.environ["DEEPSEEK_API_KEY"],

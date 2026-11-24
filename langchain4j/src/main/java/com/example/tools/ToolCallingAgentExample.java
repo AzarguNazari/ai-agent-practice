@@ -19,7 +19,7 @@ public class ToolCallingAgentExample {
         ChatModel model = OpenAiChatModel.builder()
                 .baseUrl("https://api.deepseek.com")
                 .apiKey(System.getenv("DEEPSEEK_API_KEY"))
-                .modelName("deepseek-chat")
+                .modelName("deepseek-flash")
                 .build();
 
         TeachingAssistant assistant = AiServices.builder(TeachingAssistant.class)
